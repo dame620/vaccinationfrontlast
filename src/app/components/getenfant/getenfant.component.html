@@ -1,0 +1,61 @@
+<div class="container" style="margin-left: 270px;">
+<button type="button" class="btn btn-success" (click)="ongetListeenfants()">affichage LISTE ENFANTS</button>
+
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOM ENFANT</th>
+          <th>PRENOM ENFANT</th>
+          <th>SEXE</th>
+          <th>TEL MERE</th>
+          <th>TEL CHEF QR</th>
+          <th>NUM ORDRE</th>
+          <th>NOM MERE</th>
+          <th>ETAT CIVIL</th>
+          <th>TEL CHEF QR</th>
+          <th>DATE NAISS</th>
+          <th>ADRESSE</th>
+          <th>ETAT ENTRE</th>
+          <th>ETAT SORTIE</th>
+          <th>MOTIF SORTIE</th>
+          <th>PRENOM MERE</th>
+          <th>TEL BADIEN GOKH</th>
+          <th>PRENOM BADIENNE GOKH</th>
+          <th>NOM BADIENNE GOKH</th>
+          <th>PRENOM CHEF QR</th>
+          <th>NOM CHEF QR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let enfant of getenfants">
+
+            <td>{{enfant.id}}</td>
+            <td>{{enfant.nom}}</td>
+            <td>{{enfant.prenom}}</td>
+            <td>{{enfant.sexe}}</td>
+            <td>{{enfant.telmere}}</td>
+            <td>{{enfant.telchefquartier}}</td>
+            <td>{{enfant.numordre}}</td>
+            <td>{{enfant.nommere}}</td>
+            <td>{{enfant.numetatcivil}}</td>          
+            <td>{{enfant.telchefquartier}}</td>
+            <td>{{enfant.datenaissance}}</td>
+            <td>{{enfant.adresse}}</td>
+            <td>{{enfant.etatentree}}</td>          
+            <td>{{enfant.etatsortie}}</td>
+            <td>{{enfant.motifsortie}}</td>          
+            <td>{{enfant.prenommere}}</td>
+            <td>{{enfant.telbadiennegokh}}</td>          
+            <td>{{enfant.prenombadienegok}}</td>
+            <td>{{enfant.nombadienegokh}}</td>          
+            <td>{{enfant.prenomchefquartier}}</td>
+            <td>{{enfant.nomchefquartier}}</td>
+            
+        </tr>
+    </tbody>
+    </table>
+  </div>
+ 
+
+  
