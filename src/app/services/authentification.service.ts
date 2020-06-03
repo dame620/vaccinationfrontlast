@@ -49,5 +49,13 @@ pipe(map(user => {
    
     return this.httpClient.post<User>(`${environment.apiUrl}/api/users`,enfant);
   }
+
+  //deconnection
+  logout(){
+
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+
+  }
   
 }

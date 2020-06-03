@@ -1,6 +1,7 @@
 import { AuthentificationService } from './../../services/authentification.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class FormConnexionComponent implements OnInit {
 
 
   formConnexion:FormGroup;
-  constructor(private auth: AuthentificationService) { }
+  constructor(private auth: AuthentificationService, private router: Router) { }
 
   ngOnInit(){
     
@@ -35,11 +36,15 @@ let user={
 
 this.auth.getConnexion(user).subscribe(
   data=>{
+    alert("operation reussi avec success");
     console.log(data);
+    this.router.navigate(['home']);
   },
   //encas d'eereur on peut recuperer l'eereur comme suit
   error=>{
+    alert("echec de l'operation");
     console.log(error);
+
   }
 )
 }

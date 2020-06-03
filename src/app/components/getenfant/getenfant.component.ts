@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnfantService } from 'src/app/services/enfant.service';
+import { Enfant } from '../../models/enfant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-getenfant',
@@ -7,10 +9,16 @@ import { EnfantService } from 'src/app/services/enfant.service';
   styleUrls: ['./getenfant.component.scss']
 })
 export class GetenfantComponent implements OnInit {
-
+  enfant:Enfant[];
   getenfants;
-  constructor(private auth: EnfantService) { }
+  rechercheUser;
+  constructor(private auth: EnfantService,private router:Router) { }
   ngOnInit() {
+
+    if(!localStorage.getItem('token')) {
+      this.router.navigate(['login']);
+      return; 
+    }
     
     this.auth.getEnfant().subscribe(
       data=>{
@@ -36,5 +44,11 @@ export class GetenfantComponent implements OnInit {
         }
     )
   }
+
+  editEnfant(enfant:Enfant): void{
+    localStorage.removeItem("editEnfantId");
+    localStorage.setItem("editEnfantId", enfant.id.toString());
+    this.router.navigate(['putenfant']);
+  };
 
 }

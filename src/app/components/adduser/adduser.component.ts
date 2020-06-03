@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthentificationService } from '../../services/authentification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adduser',
@@ -10,7 +11,7 @@ import { AuthentificationService } from '../../services/authentification.service
 export class AdduserComponent implements OnInit {
   formadduser:FormGroup;
   roles: any;
-  constructor(private auth: AuthentificationService) { }
+  constructor(private auth: AuthentificationService,private router:Router) { }
 
   ngOnInit(){
     
@@ -51,10 +52,12 @@ onAdduser(){
     data=>{
       alert("ajout reussi avec success");
       console.log(data);
+      this.router.navigate(['home']);
     },
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{
       console.log(error);
+      alert("echec operation");
     }
   )
   }

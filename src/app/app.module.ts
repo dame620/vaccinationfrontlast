@@ -1,9 +1,10 @@
 import { JwtInterceptor } from './helpers/jwt-interceptor.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,20 @@ import { GetenfantComponent } from './components/getenfant/getenfant.component';
 import { ShowgetenfantComponent } from './pages/showgetenfant/showgetenfant.component';
 import { GettypeComponent } from './components/gettype/gettype.component';
 import { ShowgettypeComponent } from './pages/showgettype/showgettype.component';
+import { AddactionComponent } from './components/addaction/addaction.component';
+import { ShowaddactionComponent } from './pages/showaddaction/showaddaction.component';
+import { GetactionComponent } from './components/getaction/getaction.component';
+import { ShowgetactionComponent } from './pages/showgetaction/showgetaction.component';
+import { AddrendezvousComponent } from './components/addrendezvous/addrendezvous.component';
+import { ShowaddrendezvousComponent } from './pages/showaddrendezvous/showaddrendezvous.component';
+import { EditEnfantComponent } from './components/edit-enfant/edit-enfant.component';
+import { ShoweditEnfantComponent } from './pages/showedit-enfant/showedit-enfant.component';
+import { EditRendezvousComponent } from './components/edit-rendezvous/edit-rendezvous.component';
+import { ShoweditRendezvousComponent } from './pages/showedit-rendezvous/showedit-rendezvous.component';
+import { ListrvComponent } from './components/listrv/listrv.component';
+import { ShowlistrvComponent } from './pages/showlistrv/showlistrv.component';
+import { HomecompComponent } from './components/homecomp/homecomp.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -36,13 +51,29 @@ import { ShowgettypeComponent } from './pages/showgettype/showgettype.component'
     GetenfantComponent,
     ShowgetenfantComponent,
     GettypeComponent,
-    ShowgettypeComponent
+    ShowgettypeComponent,
+    AddactionComponent,
+    ShowaddactionComponent,
+    GetactionComponent,
+    ShowgetactionComponent,
+    AddrendezvousComponent,
+    ShowaddrendezvousComponent,
+    EditEnfantComponent,
+    ShoweditEnfantComponent,
+    EditRendezvousComponent,
+    ShoweditRendezvousComponent,
+    ListrvComponent,
+    ShowlistrvComponent,
+    HomecompComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    Ng2SearchPipeModule,
  
   ],
   providers: [

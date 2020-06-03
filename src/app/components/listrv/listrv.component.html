@@ -1,0 +1,82 @@
+<div class="container" style="margin-left: 270px;">
+  <div class="search" >
+    <input class="form-control" type="text" placeholder="rechercher ici..." name="search"  [(ngModel)]="rechercheRv" style="margin-left:500px ;"> 
+  </div>
+    <button type="button" class="btn btn-success" (click)="ongetListeRv()">AFFICHAGE LISTE RV</button>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>EFFECTUER RV</th>
+          <th>ETAT RV</th>
+          <th>NUM ORDRE</th>
+
+          <th>DATE RV</th>
+
+          <th>PRENOM ENF</th>
+          <th>NOM ENF</th>
+
+          <th>SEXE</th>
+          <th>DATE NAISS</th>
+          
+
+          <th>NOM ACTION</th>
+          <th>TYPE</th>
+
+          
+          <th>POIDS</th>
+          <th>AGE</th>
+          <th>TAILLE</th>
+          <th>POIDSTAILLE(P/T)</th>
+          <th>POIDSAGE(P/A)</th>
+          <th>TAILLEAGE(P/A)</th>
+          <th>MILDA</th>
+          <th>PER-BRACIAL</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rv of rendezvouses | filter:rechercheRv">
+
+            <td>{{rv.id}}</td>
+            <td>
+              <a href="/putrv" target="_blank" class="btn btn-success btn-sm" >EFECTUER RV</a>
+            </td>
+
+            <td>
+              <div *ngIf="rv.etatrv; else elseBlock">
+                <button class="btn btn-success" >ACTIVE</button>
+
+                </div>
+              <ng-template #elseBlock>
+                <button class="btn btn-danger" >INACTIVE</button>
+              </ng-template>
+            </td>
+
+            <td>{{rv.enfant.numordre}}</td>
+
+            <td>{{rv.daterv}}</td>
+            <td>{{rv.enfant.prenom}}</td>
+            <td>{{rv.enfant.nom}}</td>
+
+            <td>{{rv.enfant.sexe}}</td>
+            <td>{{rv.enfant.datenaissance}}</td>
+
+            <td>{{rv.action.libelleaction}}</td>
+            <td>{{rv.action.type.libelletype}}</td>
+            <td>{{rv.poid}}</td>
+            <td>{{rv.age}}</td>
+            <td>{{rv.taille}}</td>
+
+            <td>{{rv.poidstaille}}</td>
+            <td>{{rv.poidsage}}</td>
+            <td>{{rv.tailleage}}</td>
+            <td>{{rv.milda}}</td>
+            <td>{{rv.pb}}</td>
+            
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+  

@@ -1,10 +1,14 @@
 <div class="container" style="margin-left: 270px;">
+  <div class="search" >
+    <input class="form-control" type="text" placeholder="rechercher ici..." name="search"  [(ngModel)]="rechercheUser" style="margin-left:500px ;"> 
+  </div>
 <button type="button" class="btn btn-success" (click)="ongetListeenfants()">affichage LISTE ENFANTS</button>
 
     <table class="table table-dark">
       <thead>
         <tr>
           <th>ID</th>
+          <th>MODIFIER</th>
           <th>NOM ENFANT</th>
           <th>PRENOM ENFANT</th>
           <th>SEXE</th>
@@ -28,9 +32,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let enfant of getenfants">
-
+        <tr *ngFor="let enfant of getenfants | filter:rechercheUser">
             <td>{{enfant.id}}</td>
+            <td>
+            <button class="btn btn-success" (click)="editEnfant(enfant)" style="margin-left: 20px;"> MODIFIER</button>
+            </td>
             <td>{{enfant.nom}}</td>
             <td>{{enfant.prenom}}</td>
             <td>{{enfant.sexe}}</td>
@@ -47,7 +53,7 @@
             <td>{{enfant.motifsortie}}</td>          
             <td>{{enfant.prenommere}}</td>
             <td>{{enfant.telbadiennegokh}}</td>          
-            <td>{{enfant.prenombadienegok}}</td>
+            <td>{{enfant.prenombadienegokh}}</td>
             <td>{{enfant.nombadienegokh}}</td>          
             <td>{{enfant.prenomchefquartier}}</td>
             <td>{{enfant.nomchefquartier}}</td>

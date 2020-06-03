@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VAccination</title>
+  <base href="/">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  
+   <script>
+    $(".sidebar-dropdown > a").click(function() {
+      $(".sidebar-submenu").slideUp(200);
+      if (
+        $(this)
+          .parent()
+          .hasClass("active")
+      ) {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .parent()
+          .removeClass("active");
+      } else {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .next(".sidebar-submenu")
+          .slideDown(200);
+        $(this)
+          .parent()
+          .addClass("active");
+      }
+    });
+    
+    $("#close-sidebar").click(function() {
+      $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function() {
+      $(".page-wrapper").addClass("toggled");
+    });
+      </script>
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">pro sidebar</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://cdn.hintigo.fr/uploads/2019/04/money-transaction_1497001864-425x318.jpg" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">DISTRICTE
+            <strong>CAMBERENE</strong>
+          </span>
+          <span class="user-role">PROGRAMME</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>VACCINATION</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <a href="/home">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>HOME</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/login">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>SE CONNECTER</span>
+            </a>
+            <div class="sidebar-submenu">
+
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/addrv">
+              <i class="fa fa-shopping-cart"></i>
+              <span>PLANIFIER RV </span>
+             
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+             </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/addenfant">
+              <i class="far fa-gem"></i>
+              <span>AJOUTER ENFANT</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/getrv" >LISTE RV </a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/getenfant">
+              <i class="fa fa-chart-line"></i>
+              <span>LISTE ENFANT</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Pie chart</a>
+                </li>
+                <li>
+                  <a href="#">Line chart</a>
+                </li>
+                <li>
+                  <a href="#">Bar chart</a>
+                </li>
+                <li>
+                  <a href="#">Histogram</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="/getrv" >
+              <i class="fa fa-globe"></i>
+              <span>LISTE RV</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Google maps</a>
+                </li>
+                <li>
+                  <a href="#">Open street map</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/addaction">
+              <i class="fa fa-book"></i>
+              <span>AJOUT ACTION</span>
+              <span class="badge badge-pill badge-primary"></span>
+            </a>
+          </li>
+          <li>
+            <a href="/getaction" >
+              <i class="fa fa-calendar"></i>
+              <span>LISTE ACTION</span>
+            </a>
+          </li>
+          <li>
+            <a href="/putenfant" >
+              <i class="fa fa-folder"></i>
+              <span>MODIFIER ENFANT</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
+      <h3> BIENVENUE AU PROGAMME DE VACCINATION POUR TOUS</h3>
+      <hr>
+      <div class="row">
+        <div class="form-group col-md-6">
+       
+          <a href="/login" target="_blank" class="btn btn-primary btn-sm">SE CONNECTER</a>, 
+          <ul>
+            <li>
+              <a href="/getaction" target="_blank" class="btn btn-success btn-sm" >LISTE ACTION</a>
+            </li>
+            <li>
+              <a href="/addrv" target="_blank" class="btn btn-primary btn-sm">PLANIFIER RV</a>
+            </li>
+          </ul>  
+        </div>
+
+        <div class="form-group col-md-6">
+       
+          <a target="_blank" (click)="onlogout()" class="btn btn-primary btn-sm">DECONNECTER</a>, 
+          <ul>
+            <li>
+              
+              <a href="/addenfant" target="_blank" class="btn btn-success btn-sm">AJOUT ENFANT</a>
+            </li>
+            <li>
+             
+              <a href="/getenfant" target="_blank" class="btn btn-primary btn-sm" >LISTE ENFANT</a>
+            </li>
+            
+          </ul>  
+        </div>
+       
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/putenfant" target="_blank" class="btn btn-success btn-sm" >MODIFIER ENFANT</a>
+
+          </div>
+        </div>
+
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/addrv" target="_blank" class="btn btn-success btn-sm" >PLANIFIER RV</a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/getrv" target="_blank" class="btn btn-success btn-sm" >LISTE RV </a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/getenfant" target="_blank" class="btn btn-success btn-sm" >LISTE ENFANT </a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/adduser" target="_blank" class="btn btn-success btn-sm" >AJOUTER USER</a>
+
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div class="alert alert-success" role="alert">
+    
+              <a href="/addaction" target="_blank" class="btn btn-success btn-sm" >AJOUT ACTION</a>
+
+          </div>
+        </div>
+      </div>
+      <h5>LA SANTE DES ENFANTS C'EST NOTRE PRIORITE MOI AUSSI JE PARTICIPE</h5>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://media.istockphoto.com/photos/full-body-shot-of-a-happy-african-black-child-getting-a-needle-as-a-picture-id842147876" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/addrv" target="_blank" class="btn btn-primary btn-sm">AJOUT RV</a>
+              <a href="/getrv" target="_blank" class="btn btn-success btn-sm">LISTE RV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://www.gavi.org/sites/default/files/background-image/2019/RS20189_Sam-Reinders_sq.jpg" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/addenfant" target="_blank" class="btn btn-primary btn-sm" > AJOUTENFANT </a>
+              <a href="/getenfant" target="_blank" class="btn btn-success btn-sm" >LISTE ENFANT</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card rounded-0 p-0 shadow-sm">
+            <img src="https://img.aws.la-croix.com/2019/03/21/1201010414/permettre-evaluation-reguliere-connaissances-medecinsaussi-chirurgiens-dentistes-sages-femmes-pharmaciens-infirmiers-masseurs-kinesitherapeutes-pedicures-podologues_0_728_484.jpg" class="card-img-top rounded-0" alt="Angular pro sidebar">
+            <div class="card-body text-center">
+              <h6 class="card-title"></h6>
+              <a href="/addaction" target="_blank" class="btn btn-primary btn-sm"  > AJOUT ACTION</a>
+              <a href="/getrv" target="_blank" class="btn btn-success btn-sm" > LISTE RV </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+
+  
+</body>
+</html>

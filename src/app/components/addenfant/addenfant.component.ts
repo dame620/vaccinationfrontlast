@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnfantService } from 'src/app/services/enfant.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addenfant',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddenfantComponent implements OnInit {
   formaddenfant:FormGroup;
-  constructor(private auth: EnfantService) { }
+  constructor(private auth: EnfantService, private router: Router) { }
 
   ngOnInit(){
 
@@ -69,8 +70,10 @@ export class AddenfantComponent implements OnInit {
     
     this.auth.postEnfant(enfant).subscribe(
       data=>{
-        alert("ajout reussi avec success");
-        console.log(data);
+        alert("operation reussi avec success");
+      console.log(data);
+      //localStorage.setItem("token",data.token);
+      this.router.navigate(['home']);
       },
       //encas d'eereur on peut recuperer l'eereur comme suit
       error=>{

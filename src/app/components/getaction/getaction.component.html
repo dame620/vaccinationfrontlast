@@ -1,0 +1,23 @@
+
+<div class="container" style="margin-left: 270px;">
+    <button type="button" class="btn btn-success" (click)="ongetAction()">AFFICHAGE ACTIONS</button>
+
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>LIBELLE ACTION</th>
+          <th>TYPE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of actions">
+
+            <td>{{action.id}}</td>
+            <td>{{action.libelleaction}}</td>
+            <td>{{action.type.libelletype}}</td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+  

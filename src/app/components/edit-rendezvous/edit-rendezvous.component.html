@@ -1,0 +1,167 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header text-center">Modification d'un enfant</h4>
+        <div class="card-body">
+  
+<form [formGroup]="editrvForm" >
+    
+    <div class="row mb-3">
+        <div class="col">
+          <label for="id">ID</label>
+          <input type="number" formControlName="id" class="form-control"  >
+        </div>
+
+        <div class="form-group col">
+          <label for="prenom">Prenom</label>
+          <input formControlName="prenom" name="prenom"  class="form-control" value={{prenom}} id="prenom">
+        </div>
+       
+        <div class="form-group col">
+            <label for="nom">Nom</label>
+            <input type="text" formControlName="nom" class="form-control"  value={{nom}} id="nom">
+        </div>
+
+    </div>
+
+    <div class="row mb-3 col">
+        <div class="col">
+            <label for="prenommere">PRENOM MERE</label>
+            <input type="prenommere" formControlName="prenommere"  class="form-control" value={{prenommere}}  id="prenommere">
+        </div>
+
+   
+        <div class="form-group col">
+            <label for="datenaissance">DATE NAISSANCE</label>
+            <input type="text" formControlName="datenaissance"  class="form-control"  value={{datenaissance}} id="datenaissance">
+        </div>
+
+        <div class="form-group col">
+            <label for="daterv">DATE RV</label>
+            <input type="text" formControlName="daterv" class="form-control"  value={{daterv}} id="daterv">
+        </div>
+    </div>
+
+    
+
+    <div class="row mb-3 col">
+        <div class="col">
+          <label for="libelleaction">ACTION</label>
+          <input   formControlName="libelleaction"  class="form-control" value={{libelleaction}} id="libelleaction">
+        </div>
+
+        <div class="form-group col">
+            <label for="poid">POIDS</label>
+            <input type="text" formControlName="poid" class="form-control" value={{poid}}  id="poid">
+        </div>
+       
+        <div class="form-group col">
+            <label for="age">AGE</label>
+            <input type="text" formControlName="age"  class="form-control" value={{age}}  id="age">
+        </div>
+
+
+    </div>
+
+    <div class="row mb-3 col">
+        <div class="col">
+            <label for="taille">TAILLE</label>
+            <input type="text" formControlName="taille" class="form-control" value={{taille}}  id="taille">
+        </div> 
+
+        <div class="form-group col">
+            <label for="poidsage">POIDS AGE</label>
+            <select input type="text" formControlName="poidsage"  class="form-control" value={{poidsage}} id="poidsage">
+                <option   value="pip">PIP</option>
+                <option   value="ipm">IPM</option>
+                 <option   value="ips">IPS</option>
+            </select>
+        </div>
+
+        <div class="form-group col">
+            <label for="oeudeme">OEUDEME</label>
+            <select input type="text" formControlName="oeudeme" class="form-control" value={{oeudeme}} id="oeudeme">
+                <option   value="neant">NEANT</option>
+                <option   value="un">UN</option>
+                 <option   value="deux">DEUX</option>
+                 <option   value="trois">TROIS</option>
+                 
+            </select>
+        </div>
+ </div>
+
+    <div class="row mb-3 col">
+        <div class="col">
+            <label for="tailleage">TAILLE AGE</label>
+            <select input type="text" formControlName="tailleage"  class="form-control" value={{tailleage}} id="tailleage">
+                <option   value="mcs">MCS</option>
+                <option   value="mcm">MCM</option>
+                 <option   value="pmc">PMC</option>
+                 
+            </select>
+        </div>
+    
+        <div class="form-group col">
+            <label for="text">POIDS TAILLE</label>
+            <select input type="text" formControlName="poidstaille" class="form-control" value={{poidstaille}} id="poidstaille">
+                <option   value="pma">PMA</option>
+                <option   value="mcs">MAS</option>
+                <option   value="mcm">MAM</option>
+                 <option   value="surpoidobesite">SURPOIDSOBESITE</option>
+                 
+            </select>
+        </div>
+        <div class="form-group col">
+            <label for="milda">MILDA</label>
+            <select input type="text" formControlName="milda" class="form-control" value={{milda}} id="milda">
+                <option   value="oui">OUI</option>
+                <option   value="non">NON</option>   
+            </select>
+
+        </div>
+
+    </div> 
+
+    <div class="col">
+        <label for="pb">PERIMETRE BRACIALE</label>
+        <input type="text" formControlName="pb"  class="form-control" value={{pb}} id="pb">
+    </div>
+ 
+        <!--div class="form-group col">
+            <label for="telbadiennegokh">Tel Badienne Gokh</label>
+            <input type="number" formControlName="telbadiennegokh" [(ngModel)] = "enfant.telbadiennegokh" class="form-control" name="telbadiennegokh" id="telbadiennegokh">
+        </div>
+    </div>
+    <div class="row mb-3 col">
+        <div class="col">
+            <label for="etatentree">Etat Entrée</label>
+            <input type="text" formControlName="etatentree" [(ngModel)] = "enfant.etatentree" class="form-control" name="etatentree" id="etatentree">
+        </div>
+       
+        <div class="form-group col">
+            <label for="etatsortie">Etat Sortie</label>
+            <input type="text" formControlName="etatsortie" [(ngModel)] = "enfant.etatsortie" class="form-control" name="etatsortie" id="etatsortie">
+        </div>
+
+        <div class="form-group col">
+            <label for="motifsortie">Motif Sortie</label>
+            <input type="text" formControlName="motifsortie" [(ngModel)] = "enfant.motifsortie" class="form-control" name="motifsortie" id="motifsortie">
+        </div>
+    </div>
+
+    <div class="row mb-3 col">
+        <div class="col">
+            <label for="prenombadienegokh">Prenom Badienne Gokh</label>
+            <input type="text" formControlName="prenombadienegokh" [(ngModel)] = "enfant.prenombadienegokh" class="form-control" name="prenombadienegokh" id="prenombadienegokh">
+        </div>
+
+        <div class="form-group col">
+            <label for="nombadienegokh">Nom Badienne Gokh</label>
+            <input type="text" formControlName="nombadienegokh" [(ngModel)] = "enfant.nombadienegokh" class="form-control" name="nombadienegokh" id="nombadienegokh">
+        </div>
+    </div-->
+            <button type="submit" (click)="onSubmit()" class="btn btn-success btn-block">Modifier</button>
+            
+  </form>
+  </div>
+</div>
+</div>

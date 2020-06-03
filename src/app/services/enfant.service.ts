@@ -24,5 +24,18 @@ export class EnfantService {
     return this.httpClient.get<Enfant>(`${environment.apiUrl}/api/enfants`);
   }
   
+  getEnfantById(id: number) {
+    return this.httpClient.get<Enfant>(`${environment.apiUrl}/api/enfants/${id}`);
+  }
+
+  putEnfant(enfant:Enfant) {
+    return this.httpClient.put<Enfant>(`${environment.apiUrl}/api/enfants/${enfant.id}`, enfant);
+  }
+  
+  getenfrv(numordre){
+    
+    return this.httpClient.get<Enfant>(`${environment.apiUrl}/api/enfants?numordre=${numordre}`);
+  }
+
 
 }
