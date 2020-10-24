@@ -20,5 +20,7 @@ etatsortie?: string;
 motifsortie?: any;
 prenombadienegokh?: string;
 nombadienegokh?: string;
+telpere?: number;
+numvilla?: any;
 
 }

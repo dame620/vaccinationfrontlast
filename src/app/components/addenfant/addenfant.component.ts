@@ -34,6 +34,9 @@ export class AddenfantComponent implements OnInit {
       nombadienegokh: new FormControl(''),
       sexe: new FormControl(''),
       prenomchefquartier: new FormControl(''),
+      telpere: new FormControl(''),
+      numvilla: new FormControl(''),
+
       
       
   });
@@ -62,7 +65,9 @@ export class AddenfantComponent implements OnInit {
       prenombadienegokh: this.formaddenfant.value.prenombadienegokh,
       nombadienegokh: this.formaddenfant.value.nombadienegokh,
       sexe: this.formaddenfant.value.sexe,
-      prenomchefquartier: this.formaddenfant.value.prenomchefquartier
+      prenomchefquartier: this.formaddenfant.value.prenomchefquartier,
+      telpere: this.formaddenfant.value.telpere,
+      numvilla: this.formaddenfant.value.numvilla
       
     };
     /*passage de l'objet user a la methode get connexion le subscribe permet de
