@@ -82,7 +82,7 @@ export class AddenfantComponent implements OnInit {
       },
       //encas d'eereur on peut recuperer l'eereur comme suit
       error=>{
-        alert("Echec de l'ajout");
+        alert("Echec de l'operation");
         console.log(error);
       }
     )

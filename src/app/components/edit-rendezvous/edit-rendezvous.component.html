@@ -8,12 +8,14 @@
     <div class="row mb-3">
         <div class="col">
           <label for="id">ID</label>
-          <input type="number" formControlName="id" class="form-control"  >
+          <input type="text" formControlName="id" [(ngModel)] = "rendezvous.id" name="id" class="form-control" value="rendezvous.id" readonly id="id">
+
         </div>
 
         <div class="form-group col">
           <label for="prenom">Prenom</label>
-          <input formControlName="prenom" name="prenom"  class="form-control" value={{prenom}} id="prenom">
+          <input formControlName="prenom" name="prenom" value={{prenom}} class="form-control" id="prenom">
+
         </div>
        
         <div class="form-group col">

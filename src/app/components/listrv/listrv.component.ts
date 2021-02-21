@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RendezvousService } from '../../services/rendezvous.service';
 import { Router } from '@angular/router';
+import { Rendezvous } from '../../models/rendezvous';
 
 @Component({
   selector: 'app-listrv',
@@ -8,16 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./listrv.component.scss']
 })
 export class ListrvComponent implements OnInit {
-
+  rv:Rendezvous[];
   rendezvouses;
   rechercheRv;
   constructor(private auth: RendezvousService,private router: Router) { }
 
   ngOnInit() {
-    if(!localStorage.getItem('token')) {
+   /* if(!localStorage.getItem('token')) {
       this.router.navigate(['login']);
       return; 
-    }
+    }*/
 
   this.auth.getListrv().subscribe(
     data=>{
@@ -40,11 +41,17 @@ ongetListeRv(){
       console.log(data["hydra:member"]
       )},
       error=>{
-        alert('echec');
+        alert("echec de l'operation");
         console.log(error);
       }
   )
 
 }
+
+editRendezvous(rv:Rendezvous): void{
+  localStorage.removeItem("editrvId");
+  localStorage.setItem("editrvId", rv.id.toString());
+  this.router.navigate(['putrv']);
+};
 
 }

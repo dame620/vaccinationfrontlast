@@ -15,6 +15,7 @@ export class EditEnfantComponent implements OnInit {
 
   ngOnInit() {
     let enfantId = localStorage.getItem("editEnfantId");
+  
     if(!enfantId) {
       alert("Invalid action.")
       this.router.navigate(['getenfant']);

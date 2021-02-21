@@ -1,210 +1,136 @@
-<form action [formGroup]="formaddenfant" style= "margin-left: 270px;background-color:#999999;">
-    <h4>AJOUTER DES ENFANTS</h4>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-      
-        <div class="form-group">
-          <label for="">Prenom enfant</label>
-          <input type="text" formControlName="prenom" class="form-control" placeholder="saisir prenom enfant">
-        </div>
-  
-      </div>
-      <div class="form-group col-md-4">
-      
-        <div class="form-group">
-          <label for="">Nom enfant</label>
-          <input type="text" formControlName="nom" class="form-control" placeholder="nom enfant">
-        </div>
-  
-      </div>
-      <div class="form-group col-md-4">
-        
-        <div class="form-group">
-          <label for="">Num etat civil</label>
-          <input type="text" formControlName="numetatcivil" class="form-control" placeholder="num etat civil">
-        </div>
-  
-      </div>
-    </div>
-  
-    <div class="form-row">
-        <div class="form-group col-md-4">
-        
-          <div class="form-group">
-            <label for="">Prenom mere</label>
-            <input type="text" formControlName="prenommere" class="form-control" placeholder="prenom mere">
-          </div>
-    
-        </div>
-        <div class="form-group col-md-4">
-        
-          <div class="form-group">
-            <label for="">nom mere</label>
-            <input type="text" formControlName="nommere" class="form-control" placeholder="nom mere">
-          </div>
-    
-        </div>
-        <div class="form-group col-md-4">
-        
-          <div class="form-group">
-            <label for="">ADRESSE</label>
-            <input type="text" formControlName="adresse" class="form-control" placeholder="Votre adresse">
-          </div>
-    
-        </div>
-      </div>
+<div class="col-md-9 offset-md-3 mt-5">
+  <div class="card">
+    <h4 class="card-header text-center">AJOUTER DES ENFANTS</h4>
+    <div class="card-body">
 
-    
-      <div class="form-row">
-          <div class="form-group col-md-4">
-          
-            <div class="form-group">
-              <label for="">Tel mere</label>
-              <input type="number" formControlName="telmere" class="form-control" placeholder="tel mere">
-            </div>
-      
-          </div>
-          <div class="form-group col-md-4">
-          
-            <div class="form-group">
-              <label for="">Tel pere</label>
-              <input type="number" formControlName="telpere" class="form-control" placeholder="telpere">
-            </div>
-      
+      <form action [formGroup]="formaddenfant" >
+        
+          <div class="row mb-3">
+              <div class="col">
+                <label for="">Prenom enfant</label>
+                <input type="text" formControlName="prenom" class="form-control" placeholder="saisir prenom enfant">
+              </div>
+
+              <div class="form-group col">
+                <label for="">Nom enfant</label>
+                <input type="text" formControlName="nom" class="form-control" placeholder="nom enfant">
+              </div>
+            
+              <div class="form-group col">
+                <label for="">Num etat civil</label>
+                <input type="text" formControlName="numetatcivil" class="form-control" placeholder="num etat civil">
+              </div>
           </div>
 
-          <div class="form-group col-md-4">
-          
-            <div class="form-group">
-              <label for="">DATE NAISSANCE</label>
-              <input type="date" formControlName="datenaissance" class="form-control" placeholder="date naissance">
+          <div class="row mb-3">
+            <div class="col">
+              <label for="">Prenom mere</label>
+              <input type="text" formControlName="prenommere" class="form-control" placeholder="prenom mere">
             </div>
-      
-          </div>
-          
-       </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-4">
-            
-              <div class="form-group">
-                <label for="">NOM BADIEN GOKH</label>
-                <input type="text" formControlName="nombadienegokh" class="form-control" placeholder="saisir prenom enfant">
-              </div>
-        
+            <div class="form-group col">
+              <label for="">nom mere</label>
+              <input type="text" formControlName="nommere" class="form-control" placeholder="nom mere">
             </div>
-            <div class="form-group col-md-4">
-            
-              <div class="form-group">
-                <label for="">PRENOM BADIEN GOKH</label>
-                <input type="text" formControlName="prenombadienegokh" class="form-control" placeholder="nom enfant">
-              </div>
-        
+          
+            <div class="form-group col">
+              <label for="">ADRESSE</label>
+              <input type="text" formControlName="adresse" class="form-control" placeholder="Votre adresse">
             </div>
-            <div class="form-group col-md-4">
-            
-              <div class="form-group">
-                <label for="">NUMERO VILLA</label>
-                <input type="text" formControlName="numvilla" class="form-control" placeholder="numero villa">
-              </div>
-        
-            </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="">Tel mere</label>
+            <input type="number" formControlName="telmere" class="form-control" placeholder="tel mere">
+          </div>
+
+          <div class="form-group col">
+            <label for="">Tel pere</label>
+            <input type="number" formControlName="telpere" class="form-control" placeholder="tel pere">
           </div>
         
-          <div class="form-row">
-              <div class="form-group col-md-4">
-              
-                <div class="form-group">
-                  <label for="">MOTIF SORTIE</label>
-                  <input type="text" formControlName="motifsortie" class="form-control" placeholder="prenom mere">
-                </div>
-          
-              </div>
-              <div class="form-group col-md-4">
-              
-                <div class="form-group">
-                  <label for="">ETAT SORTIE</label>
-                  <input type="text" formControlName="etatsortie" class="form-control" placeholder="nom mere">
-                </div>
-          
-              </div>
-              <div class="form-group col-md-4">
-              
-                <div class="form-group">
-                  <label for="">ETAT ENTRE</label>
-                  <input type="text" formControlName="etatentree" class="form-control" placeholder="Votre adresse">
-                </div>
-          
-              </div>
-            </div>
-      
-          
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                
-                  <div class="form-group">
-                    <label for="">Tel CHEF QUARTIER</label>
-                    <input type="number" formControlName="telchefquartier" class="form-control" placeholder="tel mere">
-                  </div>
-            
-                </div>
-                <div class="form-group col-md-4">
-                
-                  <div class="form-group">
-                    <label for="">NOM CHEF QUARTIER</label>
-                    <input type="text" formControlName="nomchefquartier" class="form-control" placeholder="date naissance">
-                  </div>
-            
-                </div>
-                <div class="form-group col-md-4">
-              
-                  <div class="form-group">
-                    <label for="">TEL BADIEN GOKH</label>
-                    <input type="number" formControlName="telbadiennegokh" class="form-control" placeholder="num etat civil">
-                  </div>
-            
-                </div>
-              </div>
+          <div class="form-group col">
+            <label for="">DATE NAISSANCE</label>
+            <input type="date" formControlName="datenaissance" class="form-control" placeholder="date naissance">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="">NOM BADIEN GOKH</label>
+            <input type="text" formControlName="nombadienegokh" class="form-control" placeholder="saisir prenom enfant">
+          </div>
+
+          <div class="form-group col">
+            <label for="">PRENOM BADIEN GOKH</label>
+            <input type="text" formControlName="prenombadienegokh" class="form-control" placeholder="nom enfant">
+          </div>
         
+          <div class="form-group col">
+            <label for="">NUMERO VILLA</label>
+            <input type="text" formControlName="numvilla" class="form-control" placeholder="numero villa">
+          </div>
+        </div>
 
-          
+        <div class="row mb-3">
+          <div class="col">
+            <label for="">MOTIF SORTIE</label>
+            <input type="text" formControlName="motifsortie" class="form-control" placeholder="motif sortie">
+          </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-4">
-            
-              <!--div class="form-group">
-                <label for="">SEXE</label>
-                <input type="text" formControlName="sexe" class="form-control" placeholder="prenom mere">
-              </div-->
-            
-                <label for="">SEXE</label>
+          <div class="form-group col">
+            <label for="">ETAT SORTIE</label>
+            <input type="text" formControlName="etatsortie" class="form-control" placeholder="etat sortie">
+          </div>
+        
+          <div class="form-group col">
+            <label for="">ETAT ENTRE</label>
+            <input type="text" formControlName="etatentree" class="form-control" placeholder="etat entrée">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="">Tel CHEF QUARTIER</label>
+            <input type="number" formControlName="telchefquartier" class="form-control" placeholder="tel mere">
+          </div>
+
+          <div class="form-group col">
+            <label for="">NOM CHEF QUARTIER</label>
+            <input type="text" formControlName="nomchefquartier" class="form-control" placeholder="nom chef quartier">
+          </div>
+        
+          <div class="form-group col">
+            <label for="">TEL BADIEN GOKH</label>
+            <input type="number" formControlName="telbadiennegokh" class="form-control" placeholder="tel badienne gokh">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="">SEXE</label>
                 <select class="form-control"  formControlName="sexe"> 
                   <option   value="masculin">MASCULIN</option>
                   <option   value="feminin">FEMININ</option>
                 </select> 
-             
-        
-            </div>
-            <div class="form-group col-md-4">
-            
-              <div class="form-group">
-                <label for="">PRENOM CHEF QUARTIER</label>
-                <input type="text" formControlName="prenomchefquartier" class="form-control" placeholder="nom mere">
-              </div>
-         
-            </div>
-            <div class="form-group col-md-4">
-            
-                <div class="form-group">
-                  <label for="">NUMEROORDRE</label>
-                  <input type="text" formControlName="numordre" class="form-control" placeholder="prenom mere">
-                </div>
-          
-              </div>
           </div>
-    
-  
-           <button type="submit" (click)="onAddEnfant()" class="btn btn-success" style= "width: 300px;"> Enregistrer </button> 
-     </form>
-    
-     
+
+          <div class="form-group col">
+            <label for="">PRENOM CHEF QUARTIER</label>
+            <input type="text" formControlName="prenomchefquartier" class="form-control" placeholder="prenom chef quartier">
+          </div>
+        
+          <div class="form-group col">
+            <label for="">NUMERO ORDRE</label>
+            <input type="text" formControlName="numordre" class="form-control" placeholder="numero ordre">
+          </div>
+        </div>
+      
+        <button type="submit" (click)="onAddEnfant()" class="btn btn-success" style= "width: 100%;"> Enregistrer </button> 
+
+      </form>
+    </div>
+  </div>
+</div>
+

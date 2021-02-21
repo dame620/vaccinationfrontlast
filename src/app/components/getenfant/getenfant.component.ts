@@ -15,10 +15,10 @@ export class GetenfantComponent implements OnInit {
   constructor(private auth: EnfantService,private router:Router) { }
   ngOnInit() {
 
-    if(!localStorage.getItem('token')) {
+    /*if(!localStorage.getItem('token')) {
       this.router.navigate(['login']);
       return; 
-    }
+    }*/
     
     this.auth.getEnfant().subscribe(
       data=>{

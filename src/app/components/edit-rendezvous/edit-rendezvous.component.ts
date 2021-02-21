@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormGroup, FormControl } from '@angular/forms';
+import {  FormGroup, FormControl,FormBuilder,Validators } from '@angular/forms';
 import { RendezvousService } from '../../services/rendezvous.service';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,8 @@ export class EditRendezvousComponent implements OnInit {
 
   editrvForm: FormGroup;;
   rendezvous;
+  rvId;
+  constructor(private rvser:RendezvousService, private router:Router, private formBuilder: FormBuilder) { }
   retrait;
   id?:number;
   enfant?:any;
@@ -34,30 +36,40 @@ export class EditRendezvousComponent implements OnInit {
   tailleage?:any;
   poidsage?:any
   cherche;
-  constructor(private rvser:RendezvousService, private router:Router) { }
+  
 
   ngOnInit() {
+    let rvId = localStorage.getItem("editrvId");
+    //console.log(rvId);
+    if(!rvId) {
+      alert("Invalid action.")
+      this.router.navigate(['getrv']);
+      return;
+  }
+
+  this.editrvForm = this.formBuilder.group({
+    id: this.rvId,
+    prenom: ['', Validators.required],
+    nom: ['', Validators.required],
+    prenommere: ['', Validators.required],
+    nommere: ['', Validators.required],
+    libelleaction: ['', Validators.required],
+    datenaissance: ['', Validators.required],
+    daterv: ['', Validators.required],
+    taille: ['', Validators.required],
+    poid: ['', Validators.required],
+    age: ['', Validators.required],
+    oeudeme: ['', Validators.required],
+    poidstaille: ['', Validators.required],
+    tailleage: ['', Validators.required],
+    poidsage: ['', Validators.required],
+    pb: ['', Validators.required],
+    milda: ['', Validators.required],
+
+  });
+
+
     this.cherche=0;
-      this.editrvForm = new FormGroup({
-      id: new FormControl(''),
-      prenom: new FormControl(''),
-      nom: new FormControl(''),
-      prenommere: new FormControl(''),
-      nommere: new FormControl(''),
-      libelleaction:new FormControl(''),
-      datenaissance: new FormControl(''),
-      daterv: new FormControl(''),
-      taille: new FormControl(''),
-      poid: new FormControl(''),
-      age: new FormControl(''),
-      oeudeme: new FormControl(''),
-      poidstaille: new FormControl(''),
-      tailleage: new FormControl(''),
-      poidsage: new FormControl(''),
-      pb: new FormControl(''),
-      milda: new FormControl(''),
-     
-    });
     this.existe();
 /*
     this.apiService.getEnfantById(+enfantId)
@@ -65,7 +77,10 @@ export class EditRendezvousComponent implements OnInit {
       this.enfant = data;
     });
 */
-    
+this.rvser.getRvById(+rvId)
+.subscribe(data => {
+  this.rendezvous = data;
+});
 
 }
 
@@ -144,9 +159,10 @@ onSubmit() {
     },
     //encas d'eereur on peut recuperer l'eereur comme suit
     error=>{
+      alert('Veuillez vous authentifiez');
       console.log(error);
-      alert(error);
     }
+   
   )
 
 
