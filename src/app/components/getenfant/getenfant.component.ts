@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class GetenfantComponent implements OnInit {
   enfant:Enfant[];
   getenfants;
+  nbreenfants:null;
   rechercheUser;
   constructor(private auth: EnfantService,private router:Router) { }
   ngOnInit() {
@@ -23,8 +24,11 @@ export class GetenfantComponent implements OnInit {
     this.auth.getEnfant().subscribe(
       data=>{
         this.getenfants=data["hydra:member"]
-        console.log(data["hydra:member"]
-        )},
+        console.log(data["hydra:member"])
+        this.nbreenfants=data["hydra:member"].length
+        console.log("nbre enfant",this.nbreenfants)
+        
+      },
         error=>{
           alert('Veuillez vous authentifiez');
           console.log(error);

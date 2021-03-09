@@ -1,6 +1,7 @@
 <div class="container" style="margin-left: 270px;">
-  <div class="search" >
-    <input class="form-control" type="text" placeholder="rechercher ici..." name="search"  [(ngModel)]="rechercheRv" style="margin-left:500px ;"> 
+  <div class="search" style="display: flex; margin: 25px;">
+    <input class="form-control" type="date" placeholder="rechercher ici..." name="search"  [(ngModel)]="rechercheRv" style="width: 400px; margin-right: 15px;"> 
+    <input class="form-control" type="text" placeholder="rechercher ici par mot clé..." name="search"  [(ngModel)]="rechercheetatRv" style="width:400px;"> 
   </div>
     <button type="button" class="btn btn-success" (click)="ongetListeRv()">AFFICHAGE LISTE RV</button>
     <table class="table table-dark">
@@ -36,7 +37,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let rv of rendezvouses | filter:rechercheRv">
+        <tr *ngFor="let rv of rendezvouses | filter:rechercheRv | filter:rechercheetatRv">
 
             <td>{{rv.id}}</td>
             <td>
@@ -45,22 +46,22 @@
 
             <td>
               <div *ngIf="rv.etatrv; else elseBlock">
-                <button class="btn btn-success" >ACTIVE</button>
+                <button class="btn btn-success">{{ rv.etatrendezvous }}</button>
 
                 </div>
               <ng-template #elseBlock>
-                <button class="btn btn-danger" >INACTIVE</button>
+                <button class="btn btn-danger" >{{ rv.etatrendezvous }}</button>
               </ng-template>
             </td>
 
             <td>{{rv.enfant.numordre}}</td>
 
-            <td>{{rv.daterv}}</td>
+            <td>{{rv.daterv | date: 'yyyy-MM-dd'}}</td>
             <td>{{rv.enfant.prenom}}</td>
             <td>{{rv.enfant.nom}}</td>
 
             <td>{{rv.enfant.sexe}}</td>
-            <td>{{rv.enfant.datenaissance}}</td>
+            <td>{{rv.enfant.datenaissance | date: 'yyyy-MM-dd'}}</td>
 
             <td>{{rv.action.libelleaction}}</td>
             <td>{{rv.action.type.libelletype}}</td>

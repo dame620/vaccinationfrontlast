@@ -13,5 +13,6 @@ export interface Rendezvous {
     poidsage?:any;
     milda?:any;
     pb?:any;
+    etatrendezvous?:any;
    
 }

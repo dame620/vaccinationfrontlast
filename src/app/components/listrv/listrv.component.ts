@@ -12,6 +12,7 @@ export class ListrvComponent implements OnInit {
   rv:Rendezvous[];
   rendezvouses;
   rechercheRv;
+  rechercheetatRv;
   constructor(private auth: RendezvousService,private router: Router) { }
 
   ngOnInit() {
